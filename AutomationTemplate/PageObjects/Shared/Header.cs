@@ -9,6 +9,8 @@ namespace UI.PageObjects.Shared
 
         public By SearchButton => By.Name("submit_search");
 
+        public By HeaderBanner => By.XPath("//div[@class='banner']");
+
         public Header(IWebDriver driver) : base(driver)
         {
         }
@@ -34,6 +36,14 @@ namespace UI.PageObjects.Shared
                 .Click();
 
             return new SearchResultsPage(Driver);
+        }
+
+        public MainPage ClickHeaderBanner()
+        {
+            FindElement(HeaderBanner)
+                .Click();
+
+            return new MainPage(Driver);
         }
     }
 }

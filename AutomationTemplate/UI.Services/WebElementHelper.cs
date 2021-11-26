@@ -26,6 +26,12 @@ namespace UI.Services
             }
         }
 
+        public int ElementCounter(By by)
+        {
+            return _driver.FindElements(by).Count;
+
+        }
+
 
         public string GenerateRandomString(int length)
         {
