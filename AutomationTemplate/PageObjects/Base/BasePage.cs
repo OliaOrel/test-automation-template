@@ -12,6 +12,11 @@ namespace UI.PageObjects.Base
             Driver = driver;
         }
 
+        public string GetURL()
+        {
+            return Driver.Url;
+        }
+
         public IWebElement FindElement(By by)
         {
             return Driver.FindElement(by);
