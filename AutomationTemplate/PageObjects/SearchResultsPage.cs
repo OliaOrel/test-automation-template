@@ -14,5 +14,10 @@ namespace UI.PageObjects
         {
             return By.XPath($"//h5/a[@title='{searchResultText}']");
         }
+
+        public By GetNoResultAlertBy()
+        {
+            return By.ClassName("alert-warning");
+        }
     }
 }
