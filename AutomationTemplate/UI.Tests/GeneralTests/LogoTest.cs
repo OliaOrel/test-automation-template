@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using System;
 using OpenQA.Selenium;
 
 namespace UI.Tests.GeneralTests
@@ -14,10 +13,8 @@ namespace UI.Tests.GeneralTests
             //arrange
 
             //act
-            Header.ClickLogo();
-            string currentURL = WebElementHelper.GetUrl();
-
-            Console.WriteLine(currentURL);
+            var currentURL = Header.ClickLogo()
+                                   .GetURL();
 
             //assert
             currentURL.Should()
