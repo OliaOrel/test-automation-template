@@ -13,7 +13,8 @@ namespace UI.Tests.GeneralTests
             string categoryTitle = "WOMEN ";
 
             //act
-            var searchResultBy = Header.ClickWomenButton().CategoryTitleBy();
+            var searchResultBy = Header.ClickWomenButton()
+                                       .CategoryTitleBy();
             string resultCategoryTitle = WebElementHelper.GetElementText(searchResultBy);
 
             //assert
@@ -28,7 +29,8 @@ namespace UI.Tests.GeneralTests
             string categoryTitle = "DRESSES ";
 
             //act
-            var searchResultBy = Header.ClickDressesButton().CategoryTitleBy();
+            var searchResultBy = Header.ClickDressesButton()
+                                       .CategoryTitleBy();
             string resultCategoryTitle = WebElementHelper.GetElementText(searchResultBy);
 
             //assert
@@ -43,15 +45,13 @@ namespace UI.Tests.GeneralTests
             string categoryTitle = "T-SHIRTS ";
 
             //act
-            var searchResultBy = Header.ClickTshirtsButton().CategoryTitleBy();
+            var searchResultBy = Header.ClickTshirtsButton()
+                                       .CategoryTitleBy();
             string resultCategoryTitle = WebElementHelper.GetElementText(searchResultBy);
 
             //assert
             resultCategoryTitle.Should()
                                .Be(categoryTitle);
         }
-
-
-
     }
 }
