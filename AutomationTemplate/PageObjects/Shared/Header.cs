@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using UI.PageObjects.Base;
 
 namespace UI.PageObjects.Shared
@@ -19,6 +20,8 @@ namespace UI.PageObjects.Shared
 
         public By TshirtsButton => By.XPath("//div/ul/li/a[@title='T-shirts']");
 
+        public By Subcategory => By.XPath("//li/ul/li/a[@title='T-shirts']");
+
         public Header(IWebDriver driver) : base(driver)
         {
         }
@@ -35,6 +38,7 @@ namespace UI.PageObjects.Shared
         {
             FindElement(SearchFieldBy)
                 .SendKeys(text);
+
             return this;
         }
 
@@ -81,6 +85,22 @@ namespace UI.PageObjects.Shared
         public CategoryPage ClickTshirtsButton()
         {
             FindElement(TshirtsButton)
+                .Click();
+
+            return new CategoryPage(Driver);
+        }
+
+        public Header HoverOnWomenButton()
+        {
+            Actions action = new Actions(Driver);
+            action.MoveToElement(FindElement(WomenButton)).Perform();
+
+            return this;
+        }
+
+        public CategoryPage ClickOnSubcategory()
+        {
+            FindElement(Subcategory)
                 .Click();
 
             return new CategoryPage(Driver);
