@@ -45,5 +45,12 @@ namespace UI.Services
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public int GenerateRandomInt(int min, int max)
+        {
+            var random = new Random();
+
+            return random.Next(min, max);
+        }
     }
 }
