@@ -31,6 +31,11 @@ namespace UI.Services
             return _driver.FindElement(by).Text;
         }
 
+        public string GetElementAttribut(By by, string attributeName)
+        {
+            return _driver.FindElement(by).GetAttribute(attributeName);
+        }
+
         public int ElementCounter(By by)
         {
             return _driver.FindElements(by).Count;
