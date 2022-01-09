@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Collections.ObjectModel;
 
 namespace UI.PageObjects.Base
 {
@@ -11,9 +12,19 @@ namespace UI.PageObjects.Base
             Driver = driver;
         }
 
+        public string GetURL()
+        {
+            return Driver.Url;
+        }
+
         public IWebElement FindElement(By by)
         {
             return Driver.FindElement(by);
+        }
+
+        public ReadOnlyCollection<IWebElement> FindElements(By by)
+        {
+            return Driver.FindElements(by);
         }
     }
 }
